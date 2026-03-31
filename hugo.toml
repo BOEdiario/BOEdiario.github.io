@@ -1,0 +1,77 @@
+baseURL = "https://boediario.github.io/"
+languageCode = "es"
+title = "BOEdiario"
+theme = "broadsheet"
+
+[module]
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  # external content repo, checked out by GitHub Actions into _external/content
+  [[module.mounts]]
+    source = "_external/content/posts"
+    target = "content/posts"
+
+  # files here become top-level pages like /about/ and /contact/
+  [[module.mounts]]
+    source = "_external/content/pages"
+    target = "content"
+
+  # images become available as /images/<file>
+  [[module.mounts]]
+    source = "_external/content/images"
+    target = "static/images"
+
+[params]
+  tagline = "Public-interest reporting and analysis"
+  showReadingTime = true
+  enableSearch = false
+  enableShareButtons = true
+
+  [[params.footerLinks]]
+    name = "About"
+    url = "/about/"
+
+  [[params.footerLinks]]
+    name = "Contact"
+    url = "/contact/"
+
+  [[params.footerLinks]]
+    name = "Search"
+    url = "/search/"
+
+[menu]
+  [[menu.main]]
+    name = "News"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 2

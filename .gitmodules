@@ -1,0 +1,3 @@
+[submodule "themes/broadsheet"]
+	path = themes/broadsheet
+	url = https://github.com/parkscloud/hugo-broadsheet.git
