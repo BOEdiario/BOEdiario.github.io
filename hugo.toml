@@ -32,20 +32,20 @@ theme = "broadsheet"
     source = "static"
     target = "static"
 
-  # external content repo, checked out by GitHub Actions into _external/content
+  # repo content (checked out by GitHub Actions into _external/content)
   [[module.mounts]]
-    source = "_external/content/posts"
-    target = "content/posts"
+    source = "_external/content/content/noticias"
+    target = "content/noticias"
 
-  # files here become top-level pages like /about/ and /contact/
+  # edición diaria → data/ediciones/YYYY-MM-DD.json
   [[module.mounts]]
-    source = "_external/content/pages"
-    target = "content"
+    source = "_external/content/data"
+    target = "data"
 
-  # images become available as /images/<file>
+  # assets de imagen generados por el pipeline
   [[module.mounts]]
-    source = "_external/content/images"
-    target = "static/images"
+    source = "_external/content/static/media"
+    target = "static/media"
 
 [params]
   tagline = "Public-interest reporting and analysis"
