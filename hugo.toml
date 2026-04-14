@@ -1,5 +1,6 @@
 baseURL = "https://boediario.github.io/"
 languageCode = "es"
+timeZone = "Europe/Madrid"
 title = "BOEdiario"
 theme = "broadsheet"
 
@@ -48,7 +49,7 @@ theme = "broadsheet"
     target = "static/media"
 
 [params]
-  tagline = "Public-interest reporting and analysis"
+  tagline = "Las leyes del BOE, como si fueran un periódico"
   showReadingTime = true
   enableSearch = false
   enableShareButtons = true
@@ -68,7 +69,12 @@ theme = "broadsheet"
 [menu]
   [[menu.main]]
     name = "News"
-    url = "/posts/"
+    url = "/noticias/"
+    weight = 1
+    
+  [[menu.main]]
+    name = "News"
+    url = "/noticias/"
     weight = 1
 
   [[menu.main]]
