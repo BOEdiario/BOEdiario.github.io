@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /search/
+
+# AI training crawlers — disallowed
+# AI browsing assistants (ChatGPT-User, Claude-Web, PerplexityBot…) — allowed via Allow: / above
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+Sitemap: https://boediario.github.io/sitemap.xml

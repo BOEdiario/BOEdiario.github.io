@@ -1,0 +1,32 @@
+# BOEdiario
+
+> Las leyes del BOE, como si fueran un periódico.
+
+BOEdiario es una publicación digital que sigue diariamente el Boletín Oficial del Estado (BOE) de España y traduce sus disposiciones legales a artículos periodísticos de interés ciudadano. Cada edición selecciona las normas más relevantes del día y las explica con contexto, impacto en colectivos y referencias al texto legal original.
+
+## Páginas principales
+
+- [Inicio]({{ .Site.BaseURL }}): Portada con la edición del día
+- [Noticias]({{ .Site.BaseURL }}noticias/): Archivo completo de artículos por fecha
+- [Acerca de]({{ .Site.BaseURL }}about/): Qué es BOEdiario y cómo funciona
+- [Contacto]({{ .Site.BaseURL }}contact/): Información de contacto
+
+## Artículos recientes
+{{ $noticias := where .Site.RegularPages "Section" "noticias" -}}
+{{ $sorted := sort $noticias "Date" "desc" -}}
+{{ range first 60 $sorted }}
+- [{{ .Title }}]({{ .Permalink }}){{ with .Params.summary }}: {{ . }}{{ end }}
+{{ end }}
+## Formato de los artículos
+
+Cada artículo incluye:
+- Título periodístico
+- Resumen ejecutivo
+- Fecha de publicación en el BOE
+- Sección del BOE (I, II, III…)
+- Colectivos afectados
+- Enlace al texto oficial en boe.es
+
+## Fuente de datos
+
+Toda la información procede del BOE oficial publicado en boe.es. Los artículos son resúmenes redactados automáticamente a partir del texto legal original.

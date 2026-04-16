@@ -81,3 +81,19 @@ theme = "broadsheet"
     name = "Search"
     url = "/search/"
     weight = 2
+
+# ── llms.txt output format ────────────────────────────────────────────────────
+
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["txt"]
+
+[outputFormats]
+  [outputFormats.LLMSTxt]
+    mediaType      = "text/plain"
+    baseName       = "llms"
+    isPlainText    = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "LLMSTxt"]
