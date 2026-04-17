@@ -2,18 +2,286 @@
 <article class="article-content">
   <h1>{{ .Title }}</h1>
 
-  <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-  <script src="/pagefind/pagefind-ui.js"></script>
+  <style>
+    .search-form { margin-bottom: 2rem; }
 
-  <div id="search"></div>
+    #search-query {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1.1rem;
+      font-family: var(--font-body);
+      border: 2px solid var(--color-text);
+      background: var(--color-bg);
+      color: var(--color-text);
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      new PagefindUI({
-        element: "#search",
-        showSubResults: true
-      });
+    .date-filters {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .date-filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .date-filter-group label {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .date-filter-group input[type="date"] {
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #999;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    .search-clear-dates {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      background: none;
+      border: none;
+      color: var(--color-accent);
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .search-status {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      min-height: 1.2em;
+    }
+
+    .search-results { display: flex; flex-direction: column; gap: 0; }
+
+    .search-result {
+      border-top: 1px solid #ddd;
+      padding: 1.25rem 0;
+    }
+
+    .search-result:last-child { border-bottom: 1px solid #ddd; }
+
+    .search-result-link {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .search-result-title {
+      font-family: var(--font-headline);
+      font-size: 1.15rem;
+      margin: 0 0 0.3rem;
+      line-height: 1.3;
+    }
+
+    .search-result-link:hover .search-result-title { color: var(--color-accent); }
+
+    .search-result-date {
+      font-size: 0.78rem;
+      color: #999;
+      display: block;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .search-result-excerpt {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--color-text);
+      margin: 0;
+      opacity: 0.75;
+    }
+
+    .search-result-excerpt mark {
+      background: #fef08a;
+      color: inherit;
+      padding: 0 1px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .search-result-excerpt mark { background: #7c6f00; }
+    }
+
+    .search-load-more {
+      display: none;
+      margin: 2rem auto 0;
+      padding: 0.65rem 2rem;
+      background: transparent;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+      font-family: var(--font-body);
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.8rem;
+    }
+
+    .search-load-more:hover { background: var(--color-accent); color: #fff; }
+
+    .search-no-results {
+      padding: 2rem 0;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+
+  <div class="search-form">
+    <input type="search" id="search-query" placeholder="Buscar en el BOE..." autocomplete="off" autofocus>
+    <div class="date-filters">
+      <div class="date-filter-group">
+        <label for="date-from">Desde</label>
+        <input type="date" id="date-from">
+      </div>
+      <div class="date-filter-group">
+        <label for="date-to">Hasta</label>
+        <input type="date" id="date-to">
+      </div>
+      <button class="search-clear-dates" id="clear-dates" style="display:none">Limpiar fechas</button>
+    </div>
+  </div>
+
+  <p class="search-status" id="search-status"></p>
+  <div class="search-results" id="search-results"></div>
+  <button class="search-load-more" id="load-more">Cargar más resultados</button>
+
+  <script type="module">
+    const MAX_LOAD  = 200;
+    const PAGE_SIZE = 20;
+
+    const queryEl    = document.getElementById('search-query');
+    const fromEl     = document.getElementById('date-from');
+    const toEl       = document.getElementById('date-to');
+    const clearBtn   = document.getElementById('clear-dates');
+    const statusEl   = document.getElementById('search-status');
+    const resultsEl  = document.getElementById('search-results');
+    const loadMoreEl = document.getElementById('load-more');
+
+    let pagefind;
+    let allFiltered  = [];
+    let currentPage  = 0;
+    let debounceTimer;
+
+    const MONTHS_ES = ['enero','febrero','marzo','abril','mayo','junio',
+                       'julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+    function formatDate(iso) {
+      const [y, m, d] = iso.split('-');
+      return `${parseInt(d)} de ${MONTHS_ES[parseInt(m) - 1]} de ${y}`;
+    }
+
+    function renderPage(reset) {
+      const start = currentPage * PAGE_SIZE;
+      const page  = allFiltered.slice(start, start + PAGE_SIZE);
+
+      const html = page.map(r => `
+        <article class="search-result">
+          <a href="${r.url}" class="search-result-link">
+            <h3 class="search-result-title">${r.meta?.title || r.title || 'Sin título'}</h3>
+          </a>
+          ${r.meta?.date ? `<time class="search-result-date">${formatDate(r.meta.date)}</time>` : ''}
+          <p class="search-result-excerpt">${r.excerpt}</p>
+        </article>
+      `).join('');
+
+      if (reset) {
+        resultsEl.innerHTML = html || `<p class="search-no-results">No se encontraron resultados.</p>`;
+      } else {
+        resultsEl.insertAdjacentHTML('beforeend', html);
+      }
+
+      const hasMore = allFiltered.length > (currentPage + 1) * PAGE_SIZE;
+      loadMoreEl.style.display = hasMore ? 'block' : 'none';
+    }
+
+    async function doSearch() {
+      const query = queryEl.value.trim() || null;
+      const from  = fromEl.value;
+      const to    = toEl.value;
+
+      if (!query && !from && !to) {
+        statusEl.textContent = '';
+        resultsEl.innerHTML  = '';
+        loadMoreEl.style.display = 'none';
+        return;
+      }
+
+      statusEl.textContent = 'Buscando\u2026';
+
+      try {
+        if (!pagefind) {
+          pagefind = await import('/pagefind/pagefind.js');
+          await pagefind.init();
+        }
+
+        const response = await pagefind.search(query);
+        const total    = response.results.length;
+
+        const slice  = response.results.slice(0, MAX_LOAD);
+        const data   = await Promise.all(slice.map(r => r.data()));
+
+        allFiltered = data.filter(r => {
+          const d = r.meta?.date ?? '';
+          if (from && d && d < from) return false;
+          if (to   && d && d > to)   return false;
+          return true;
+        });
+
+        currentPage = 0;
+        renderPage(true);
+
+        const shown = Math.min(allFiltered.length, PAGE_SIZE);
+        const extra = total > MAX_LOAD ? ` (de los primeros ${MAX_LOAD} indexados)` : '';
+        statusEl.textContent = `${allFiltered.length} resultado${allFiltered.length !== 1 ? 's' : ''}${extra}`;
+
+      } catch (e) {
+        statusEl.textContent = 'Error al cargar el buscador. Asegúrate de que el índice Pagefind está generado.';
+        console.error(e);
+      }
+    }
+
+    function scheduleSearch() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(doSearch, 250);
+    }
+
+    function updateClearBtn() {
+      clearBtn.style.display = (fromEl.value || toEl.value) ? 'inline' : 'none';
+    }
+
+    queryEl.addEventListener('input',  scheduleSearch);
+    fromEl.addEventListener('change',  () => { updateClearBtn(); doSearch(); });
+    toEl.addEventListener('change',    () => { updateClearBtn(); doSearch(); });
+    clearBtn.addEventListener('click', () => {
+      fromEl.value = '';
+      toEl.value   = '';
+      updateClearBtn();
+      doSearch();
     });
+
+    loadMoreEl.addEventListener('click', () => {
+      currentPage++;
+      renderPage(false);
+    });
+
+    // Pre-fill query from URL param (e.g. ?q=texto)
+    const urlQ = new URLSearchParams(location.search).get('q');
+    if (urlQ) { queryEl.value = urlQ; doSearch(); }
   </script>
 </article>
 {{ end }}
