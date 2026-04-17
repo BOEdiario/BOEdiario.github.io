@@ -237,8 +237,9 @@
 
         allFiltered = data.filter(r => {
           const d = r.meta?.date ?? '';
-          if (from && d && d < from) return false;
-          if (to   && d && d > to)   return false;
+          if ((from || to) && !d) return false;
+          if (from && d < from) return false;
+          if (to   && d > to)   return false;
           return true;
         });
 
