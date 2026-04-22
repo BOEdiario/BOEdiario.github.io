@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maquetación on BOEdiario</title>
+    <link>http://localhost:1313/tags/maquetaci%C3%B3n/</link>
+    <description>Recent content in Maquetación on BOEdiario</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 22 Apr 2026 08:00:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/maquetaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Edición demo: titular de portada</title>
+      <link>http://localhost:1313/noticias/2026-04-22-portada/</link>
+      <pubDate>Wed, 22 Apr 2026 08:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-portada/</guid>
+      <description>Noticia de ejemplo para maquetación (lead story). Ajusta tipografía, jerarquía y espaciados sin depender del repo de contenido.</description>
+    </item>
+  </channel>
+</rss>

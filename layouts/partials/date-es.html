@@ -1,0 +1,56 @@
+{{- $d := index . "date" -}}
+{{- $format := (index . "format") | default "long" -}}
+
+{{- $weekdayEn := $d | time.Format "Monday" -}}
+{{- $monthEn := $d | time.Format "January" -}}
+
+{{- $weekdays := dict
+  "Monday" "Lunes"
+  "Tuesday" "Martes"
+  "Wednesday" "Miércoles"
+  "Thursday" "Jueves"
+  "Friday" "Viernes"
+  "Saturday" "Sábado"
+  "Sunday" "Domingo"
+-}}
+
+{{- $monthsLong := dict
+  "January" "enero"
+  "February" "febrero"
+  "March" "marzo"
+  "April" "abril"
+  "May" "mayo"
+  "June" "junio"
+  "July" "julio"
+  "August" "agosto"
+  "September" "septiembre"
+  "October" "octubre"
+  "November" "noviembre"
+  "December" "diciembre"
+-}}
+
+{{- $monthsShort := dict
+  "January" "ene"
+  "February" "feb"
+  "March" "mar"
+  "April" "abr"
+  "May" "may"
+  "June" "jun"
+  "July" "jul"
+  "August" "ago"
+  "September" "sept"
+  "October" "oct"
+  "November" "nov"
+  "December" "dic"
+-}}
+
+{{- $weekdayEs := index $weekdays $weekdayEn | default $weekdayEn -}}
+{{- $monthLongEs := index $monthsLong $monthEn | default $monthEn -}}
+{{- $monthShortEs := index $monthsShort $monthEn | default $monthEn -}}
+
+{{- if eq $format "short" -}}
+{{- printf "%s %s" ($d | time.Format "2") $monthShortEs -}}
+{{- else -}}
+{{- printf "%s, %s de %s de %s" $weekdayEs ($d | time.Format "2") $monthLongEs ($d | time.Format "2006") -}}
+{{- end -}}
+

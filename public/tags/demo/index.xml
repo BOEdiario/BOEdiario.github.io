@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo on BOEdiario</title>
+    <link>http://localhost:1313/tags/demo/</link>
+    <description>Recent content in Demo on BOEdiario</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 22 Apr 2026 13:10:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Opinión: sexta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-opinion/</link>
+      <pubDate>Wed, 22 Apr 2026 13:10:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-opinion/</guid>
+      <description>Esta sexta noticia hace que aparezca la sección “Más noticias” en la portada (after 5).</description>
+    </item>
+    <item>
+      <title>Deportes: quinta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-deportes/</link>
+      <pubDate>Wed, 22 Apr 2026 12:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-deportes/</guid>
+      <description>Noticia de ejemplo para completar la parrilla.</description>
+    </item>
+    <item>
+      <title>Tecnología: cuarta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-tecnologia/</link>
+      <pubDate>Wed, 22 Apr 2026 11:20:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-tecnologia/</guid>
+      <description>Sirve para probar longitudes de titulares en cards.</description>
+    </item>
+    <item>
+      <title>Cultura: tercera noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-cultura/</link>
+      <pubDate>Wed, 22 Apr 2026 10:05:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-cultura/</guid>
+      <description>Otra pieza breve para ver el grid y la lista de titulares.</description>
+    </item>
+    <item>
+      <title>Economía: una noticia de ejemplo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-economia/</link>
+      <pubDate>Wed, 22 Apr 2026 09:15:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-economia/</guid>
+      <description>Segunda noticia demo para ver cards secundarias y metadatos.</description>
+    </item>
+    <item>
+      <title>Edición demo: titular de portada</title>
+      <link>http://localhost:1313/noticias/2026-04-22-portada/</link>
+      <pubDate>Wed, 22 Apr 2026 08:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-portada/</guid>
+      <description>Noticia de ejemplo para maquetación (lead story). Ajusta tipografía, jerarquía y espaciados sin depender del repo de contenido.</description>
+    </item>
+  </channel>
+</rss>

@@ -2,16 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>BOEdiario</title>
-    <link>https://boediario.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on BOEdiario</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://boediario.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Apr 2026 13:10:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Opinión: sexta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-opinion/</link>
+      <pubDate>Wed, 22 Apr 2026 13:10:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-opinion/</guid>
+      <description>Esta sexta noticia hace que aparezca la sección “Más noticias” en la portada (after 5).</description>
+    </item>
+    <item>
+      <title>Deportes: quinta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-deportes/</link>
+      <pubDate>Wed, 22 Apr 2026 12:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-deportes/</guid>
+      <description>Noticia de ejemplo para completar la parrilla.</description>
+    </item>
+    <item>
+      <title>Tecnología: cuarta noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-tecnologia/</link>
+      <pubDate>Wed, 22 Apr 2026 11:20:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-tecnologia/</guid>
+      <description>Sirve para probar longitudes de titulares en cards.</description>
+    </item>
+    <item>
+      <title>Cultura: tercera noticia demo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-cultura/</link>
+      <pubDate>Wed, 22 Apr 2026 10:05:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-cultura/</guid>
+      <description>Otra pieza breve para ver el grid y la lista de titulares.</description>
+    </item>
+    <item>
+      <title>Economía: una noticia de ejemplo</title>
+      <link>http://localhost:1313/noticias/2026-04-22-economia/</link>
+      <pubDate>Wed, 22 Apr 2026 09:15:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-economia/</guid>
+      <description>Segunda noticia demo para ver cards secundarias y metadatos.</description>
+    </item>
+    <item>
+      <title>Edición demo: titular de portada</title>
+      <link>http://localhost:1313/noticias/2026-04-22-portada/</link>
+      <pubDate>Wed, 22 Apr 2026 08:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/noticias/2026-04-22-portada/</guid>
+      <description>Noticia de ejemplo para maquetación (lead story). Ajusta tipografía, jerarquía y espaciados sin depender del repo de contenido.</description>
+    </item>
+    <item>
+      <title>Acerca de BOEdiario</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;qué-es-boediario&#34;&gt;Qué es BOEdiario&lt;/h2&gt;&#xA;&lt;p&gt;Cada mañana, el Estado publica el Boletín Oficial. Son decenas —a veces&#xA;cientos— de páginas donde se consolidan las decisiones que nos afectan:&#xA;quién accede a una ayuda, qué se puede pescar, cuándo cambia una norma&#xA;de tráfico, cómo se reparte un presupuesto.&lt;/p&gt;&#xA;&lt;p&gt;BOEdiario lee ese documento cada día, selecciona lo que importa, y lo&#xA;explica en lenguaje normal. Nada más, y nada menos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;por-qué-existimos&#34;&gt;Por qué existimos&lt;/h2&gt;&#xA;&lt;p&gt;El panorama informativo español ha aprendido a ser rápido, combativo y&#xA;viral. En esa carrera se ha ido desgastando una función básica del&#xA;periodismo: contar, sin ruido y sin ángulo, cuáles son las reglas del&#xA;juego en las que vivimos.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cómo clasificamos las noticias</title>
+      <link>http://localhost:1313/acerca/clasificacion/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/acerca/clasificacion/</guid>
+      <description>&lt;p&gt;BOEdiario organiza todas sus noticias en 7 secciones. Cada noticia vive&#xA;en una sola. Esta es la definición exacta que usamos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;coste-de-vida&#34;&gt;Coste de vida&lt;/h2&gt;&#xA;&lt;p&gt;Todo lo que afecta directamente a tu nómina, tu factura o tu bolsillo:&#xA;impuestos, precios regulados (gas, electricidad, combustible), pensiones,&#xA;ayudas económicas, deducciones fiscales, convenios colectivos con cifras&#xA;salariales.&lt;/p&gt;&#xA;&lt;h2 id=&#34;vivienda&#34;&gt;Vivienda&lt;/h2&gt;&#xA;&lt;p&gt;Alquiler, compra, suelo, urbanismo, licencias de obra, saneamiento,&#xA;vivienda protegida, emergencia habitacional.&lt;/p&gt;&#xA;&lt;h2 id=&#34;salud&#34;&gt;Salud&lt;/h2&gt;&#xA;&lt;p&gt;Sistema Nacional de Salud, mutualidades (MUFACE, mutualistas judiciales),&#xA;salud pública, sanidad exterior, dependencia, cribados, farmacia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contacto</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;Contacto de prueba para &lt;strong&gt;iterar la maquetación&lt;/strong&gt; del sitio en local.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Search</title>
-      <link>https://boediario.github.io/search/</link>
+      <link>http://localhost:1313/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://boediario.github.io/search/</guid>
+      <guid>http://localhost:1313/search/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,0 +1,19 @@
+<footer class="footer">
+  <div class="footer-rule"></div>
+  <div class="footer-content">
+    <div class="footer-copyright">
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> · <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </div>
+    <div class="footer-powered">
+      Diseñado y desarrollado por Víctor Lidoy y Dídac Oliveira ·<br>
+      Hecho con <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> y el tema <a href="https://github.com/parkscloud/hugo-broadsheet" target="_blank" rel="noopener">Broadsheet</a>
+    </div>
+    {{- if .Site.Params.footerLinks }}
+    <nav class="footer-nav">
+      {{- range .Site.Params.footerLinks }}
+      <a href="{{ .url }}">{{ .name }}</a>
+      {{- end }}
+    </nav>
+    {{- end }}
+  </div>
+</footer>

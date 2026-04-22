@@ -1,0 +1,8 @@
+baseURL = "http://localhost:1313/"
+
+# Config ligera para desarrollo local (maquetación).
+# El contenido demo se proporciona bajo `_external/content/...` para respetar
+# los mounts existentes del `hugo.toml` sin tocar producción.
+
+[params]
+  enableSearch = false

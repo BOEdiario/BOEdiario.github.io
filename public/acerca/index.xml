@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Acercas on BOEdiario</title>
+    <link>http://localhost:1313/acerca/</link>
+    <description>Recent content in Acercas on BOEdiario</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/acerca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo clasificamos las noticias</title>
+      <link>http://localhost:1313/acerca/clasificacion/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/acerca/clasificacion/</guid>
+      <description>&lt;p&gt;BOEdiario organiza todas sus noticias en 7 secciones. Cada noticia vive&#xA;en una sola. Esta es la definición exacta que usamos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;coste-de-vida&#34;&gt;Coste de vida&lt;/h2&gt;&#xA;&lt;p&gt;Todo lo que afecta directamente a tu nómina, tu factura o tu bolsillo:&#xA;impuestos, precios regulados (gas, electricidad, combustible), pensiones,&#xA;ayudas económicas, deducciones fiscales, convenios colectivos con cifras&#xA;salariales.&lt;/p&gt;&#xA;&lt;h2 id=&#34;vivienda&#34;&gt;Vivienda&lt;/h2&gt;&#xA;&lt;p&gt;Alquiler, compra, suelo, urbanismo, licencias de obra, saneamiento,&#xA;vivienda protegida, emergencia habitacional.&lt;/p&gt;&#xA;&lt;h2 id=&#34;salud&#34;&gt;Salud&lt;/h2&gt;&#xA;&lt;p&gt;Sistema Nacional de Salud, mutualidades (MUFACE, mutualistas judiciales),&#xA;salud pública, sanidad exterior, dependencia, cribados, farmacia.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

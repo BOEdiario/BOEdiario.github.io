@@ -1,0 +1,64 @@
+/* Overrides visuales para BOEdiario (sobre Broadsheet).
+   Mantén este fichero pequeño: variables + reglas puntuales. */
+
+/* Masthead un poco más “periódico” pero moderno */
+.masthead {
+  padding-top: calc(var(--space-md) + var(--space-sm));
+}
+
+.masthead-title {
+  letter-spacing: -0.03em;
+}
+
+.masthead-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masthead-logo svg {
+  width: min(680px, 92vw);
+  height: auto;
+  display: block;
+}
+
+.masthead-logo img {
+  width: min(680px, 92vw);
+  height: auto;
+  display: block;
+}
+
+.masthead-nav-list a {
+  letter-spacing: 0.09em;
+}
+
+/* Tarjetas: más separación y hover más claro */
+.story-card,
+.story-item,
+.lead-story {
+  border-color: var(--color-rule-light);
+}
+
+.story-card a:hover .story-card-headline,
+.story-item a:hover .story-item-headline,
+.lead-story a:hover .lead-story-headline {
+  text-decoration: none;
+}
+
+/* Enlaces del contenido: subrayado más fino */
+.article-content a {
+  text-decoration-thickness: 1px;
+}
+
+/* Rejilla de secundarias resiliente (<4 items) */
+@media (min-width: 768px) {
+  .secondary-stories {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+.secondary-stories > :only-child {
+  max-width: 520px;
+  justify-self: center;
+}
+

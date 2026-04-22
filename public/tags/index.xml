@@ -2,10 +2,319 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on BOEdiario</title>
-    <link>https://boediario.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on BOEdiario</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://boediario.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Apr 2026 13:10:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Demo</title>
+      <link>http://localhost:1313/tags/demo/</link>
+      <pubDate>Wed, 22 Apr 2026 13:10:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/demo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maquetación</title>
+      <link>http://localhost:1313/tags/maquetaci%C3%B3n/</link>
+      <pubDate>Wed, 22 Apr 2026 08:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/tags/maquetaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>andalucia</title>
+      <link>http://localhost:1313/tags/andalucia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/andalucia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>aragon</title>
+      <link>http://localhost:1313/tags/aragon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/aragon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>asturias</title>
+      <link>http://localhost:1313/tags/asturias/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/asturias/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ayudas-autonomos</title>
+      <link>http://localhost:1313/tags/ayudas-autonomos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ayudas-autonomos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ayuntamientos</title>
+      <link>http://localhost:1313/tags/ayuntamientos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ayuntamientos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>baleares</title>
+      <link>http://localhost:1313/tags/baleares/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/baleares/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>campus-rural</title>
+      <link>http://localhost:1313/tags/campus-rural/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/campus-rural/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>canarias</title>
+      <link>http://localhost:1313/tags/canarias/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/canarias/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cantabria</title>
+      <link>http://localhost:1313/tags/cantabria/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cantabria/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>castilla-la-mancha</title>
+      <link>http://localhost:1313/tags/castilla-la-mancha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/castilla-la-mancha/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>castilla-y-leon</title>
+      <link>http://localhost:1313/tags/castilla-y-leon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/castilla-y-leon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cataluna</title>
+      <link>http://localhost:1313/tags/cataluna/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cataluna/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ceuta</title>
+      <link>http://localhost:1313/tags/ceuta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ceuta/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ciberseguridad</title>
+      <link>http://localhost:1313/tags/ciberseguridad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ciberseguridad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ciencia</title>
+      <link>http://localhost:1313/tags/ciencia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ciencia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>comunidad-valenciana</title>
+      <link>http://localhost:1313/tags/comunidad-valenciana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/comunidad-valenciana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>convenios-colectivos</title>
+      <link>http://localhost:1313/tags/convenios-colectivos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/convenios-colectivos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>cooperacion-internacional</title>
+      <link>http://localhost:1313/tags/cooperacion-internacional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cooperacion-internacional/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>despoblacion</title>
+      <link>http://localhost:1313/tags/despoblacion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/despoblacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>dgt</title>
+      <link>http://localhost:1313/tags/dgt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dgt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>extremadura</title>
+      <link>http://localhost:1313/tags/extremadura/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/extremadura/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>fiscalidad</title>
+      <link>http://localhost:1313/tags/fiscalidad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fiscalidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>galicia</title>
+      <link>http://localhost:1313/tags/galicia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/galicia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ia</title>
+      <link>http://localhost:1313/tags/ia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>igualdad</title>
+      <link>http://localhost:1313/tags/igualdad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/igualdad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>inmigracion</title>
+      <link>http://localhost:1313/tags/inmigracion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/inmigracion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>la-rioja</title>
+      <link>http://localhost:1313/tags/la-rioja/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/la-rioja/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>madrid</title>
+      <link>http://localhost:1313/tags/madrid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/madrid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>melilla</title>
+      <link>http://localhost:1313/tags/melilla/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/melilla/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>memoria-democratica</title>
+      <link>http://localhost:1313/tags/memoria-democratica/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/memoria-democratica/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>murcia</title>
+      <link>http://localhost:1313/tags/murcia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/murcia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>navarra</title>
+      <link>http://localhost:1313/tags/navarra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/navarra/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pais-vasco</title>
+      <link>http://localhost:1313/tags/pais-vasco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pais-vasco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>patrimonio</title>
+      <link>http://localhost:1313/tags/patrimonio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/patrimonio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pesca</title>
+      <link>http://localhost:1313/tags/pesca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pesca/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>renovables</title>
+      <link>http://localhost:1313/tags/renovables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/renovables/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>stem</title>
+      <link>http://localhost:1313/tags/stem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/stem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>trabajo</title>
+      <link>http://localhost:1313/tags/trabajo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/trabajo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ue-reglamento</title>
+      <link>http://localhost:1313/tags/ue-reglamento/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ue-reglamento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>universidad</title>
+      <link>http://localhost:1313/tags/universidad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/universidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>viogen</title>
+      <link>http://localhost:1313/tags/viogen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/viogen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>violencia-de-genero</title>
+      <link>http://localhost:1313/tags/violencia-de-genero/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/violencia-de-genero/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

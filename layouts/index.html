@@ -56,8 +56,9 @@
       </figure>
       {{- end }}
       <div class="lead-story-content">
-        {{- if $lead.Params.section }}
-        <span class="article-section">{{ $lead.Params.section }}</span>
+        {{- $seccion := $lead.Params.seccion | default $lead.Params.section -}}
+        {{- with $seccion }}
+          <span class="article-section">{{ . }}</span>
         {{- end }}
         <h2 class="lead-story-headline">{{ $lead.Title }}</h2>
         {{- if $lead.Params.summary }}
@@ -67,10 +68,10 @@
         {{- end }}
         <div class="article-meta">
           {{- if $lead.Params.author }}
-          <span class="article-author">By {{ $lead.Params.author }}</span>
+          <span class="article-author">Por {{ $lead.Params.author }}</span>
           {{- end }}
           <time datetime="{{ $lead.Date.Format "2006-01-02" }}">
-            {{ $lead.Date.Format "January 2, 2006" }}
+            {{ partial "date-es.html" (dict "date" $lead.Date "format" "long") }}
           </time>
         </div>
       </div>
@@ -120,13 +121,14 @@
         </figure>
         {{- end }}
         <div class="story-card-content">
-          {{- if .Params.section }}
-          <span class="article-section">{{ .Params.section }}</span>
+          {{- $seccion := .Params.seccion | default .Params.section -}}
+          {{- with $seccion }}
+            <span class="article-section">{{ . }}</span>
           {{- end }}
           <h3 class="story-card-headline">{{ .Title }}</h3>
           <div class="article-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">
-              {{ .Date.Format "Jan 2" }}
+              {{ partial "date-es.html" (dict "date" .Date "format" "short") }}
             </time>
           </div>
         </div>
@@ -146,8 +148,9 @@
       <article class="story-item">
         <a href="{{ .Permalink }}">
           <div class="story-item-content">
-            {{- if .Params.section }}
-            <span class="article-section">{{ .Params.section }}</span>
+            {{- $seccion := .Params.seccion | default .Params.section -}}
+            {{- with $seccion }}
+              <span class="article-section">{{ . }}</span>
             {{- end }}
             <h3 class="story-item-headline">{{ .Title }}</h3>
             {{- if .Params.summary }}
@@ -155,7 +158,7 @@
             {{- end }}
           </div>
           <time datetime="{{ .Date.Format "2006-01-02" }}">
-            {{ .Date.Format "Jan 2" }}
+            {{ partial "date-es.html" (dict "date" .Date "format" "short") }}
           </time>
         </a>
       </article>

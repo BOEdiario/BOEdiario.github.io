@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Demo 16x9">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f1ea"/>
+      <stop offset="1" stop-color="#e7eef6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1440" height="740" fill="none" stroke="#111827" stroke-width="6" opacity="0.25"/>
+  <g fill="#111827" opacity="0.8" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <text x="120" y="180" font-size="72" font-weight="700">Imagen demo 16:9</text>
+    <text x="120" y="260" font-size="32">Úsala para maquetación: cards, portada, recortes y espacios.</text>
+    <text x="120" y="320" font-size="28" opacity="0.7">/static/media/demo-16x9.svg</text>
+  </g>
+  <g stroke="#111827" stroke-width="4" opacity="0.15">
+    <line x1="0" y1="0" x2="1600" y2="900"/>
+    <line x1="1600" y1="0" x2="0" y2="900"/>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="list-page">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <p class="list-description">{{ .Description }}</p>
+    {{- end }}
+  </header>
+
+  <div class="stories-list">
+    {{- range .Paginator.Pages }}
+    <article class="story-item">
+      <a href="{{ .Permalink }}">
+        <div class="story-item-content">
+          {{- if .Params.section }}
+          <span class="article-section">{{ .Params.section }}</span>
+          {{- end }}
+          <h2 class="story-item-headline">{{ .Title }}</h2>
+          {{- if .Params.summary }}
+          <p class="story-item-summary">{{ .Params.summary }}</p>
+          {{- else if .Summary }}
+          <p class="story-item-summary">{{ .Summary }}</p>
+          {{- end }}
+          <div class="article-meta">
+            {{- if .Params.author }}
+            <span class="article-author">Por {{ .Params.author }}</span>
+            {{- end }}
+          </div>
+        </div>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ partial "date-es.html" (dict "date" .Date "format" "short") }}
+        </time>
+      </a>
+    </article>
+    {{- end }}
+  </div>
+
+  {{- if gt .Paginator.TotalPages 1 }}
+  <nav class="pagination" aria-label="Paginación">
+    <ul class="pagination">
+      {{- with .Paginator.Prev }}
+      <li class="page-item">
+        <a class="page-link" href="{{ .URL }}">Anterior</a>
+      </li>
+      {{- end }}
+      <li class="page-item active">
+        <span class="page-link">{{ $.Paginator.PageNumber }} / {{ $.Paginator.TotalPages }}</span>
+      </li>
+      {{- with .Paginator.Next }}
+      <li class="page-item">
+        <a class="page-link" href="{{ .URL }}">Siguiente</a>
+      </li>
+      {{- end }}
+    </ul>
+  </nav>
+  {{- end }}
+</div>
+{{ end }}
+

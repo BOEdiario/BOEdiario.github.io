@@ -1,0 +1,72 @@
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-date" id="masthead-date">
+      {{ partial "date-es.html" (dict "date" now "format" "long") }}
+    </div>
+    <div class="masthead-bookmark" id="masthead-bookmark"></div>
+    <script>
+      (function() {
+        var isMac = navigator.platform.toUpperCase().includes('MAC');
+        var el = document.getElementById('masthead-bookmark');
+        if (el) {
+          el.textContent = isMac ? 'Pulsa ⌘+D para marcar' : 'Pulsa Ctrl+D para marcar';
+        }
+      })();
+    </script>
+    {{- if .Site.Params.enableSearch }}
+    <div class="masthead-controls">
+      <button id="search-toggle" aria-label="Buscar" title="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+    {{- end }}
+  </div>
+
+  {{- if .IsHome }}
+  <h1 class="masthead-title">
+    <a href="{{ .Site.BaseURL }}" class="masthead-logo" aria-label="{{ .Site.Title }}">
+      <img src="{{ "logo.svg" | relURL }}" alt="{{ .Site.Title }}" width="698" height="89">
+    </a>
+  </h1>
+  {{- else }}
+  <div class="masthead-title">
+    <a href="{{ .Site.BaseURL }}" class="masthead-logo" aria-label="{{ .Site.Title }}">
+      <img src="{{ "logo.svg" | relURL }}" alt="{{ .Site.Title }}" width="698" height="89">
+    </a>
+  </div>
+  {{- end }}
+
+  {{- if .Site.Params.tagline }}
+  <div class="masthead-tagline">{{ .Site.Params.tagline }}</div>
+  {{- end }}
+
+  <div class="ia-banner">
+    <div class="ia-banner-inner">
+      Contenido generado por IA.
+      Resúmenes redactados automáticamente a partir del BOE. Sin validez legal.
+      <a href="{{ "/about/" | relURL }}">Cómo funciona →</a>
+    </div>
+  </div>
+
+  <nav class="masthead-nav">
+    <div class="masthead-nav-rule"></div>
+    <ul class="masthead-nav-list">
+      {{- $current := .RelPermalink -}}
+      {{- $pageSeccion := (.Params.seccion | default .Params.section) -}}
+      {{- $pageSeccionId := "" -}}
+      {{- with $pageSeccion -}}
+        {{- $pageSeccionId = (urlize .) -}}
+      {{- end -}}
+      {{- range .Site.Menus.main }}
+      {{- $isActive := or (eq $current .URL) (hasPrefix $current .URL) (and $pageSeccionId (eq .Identifier $pageSeccionId)) -}}
+      <li>
+        <a href="{{ .URL }}"{{ if $isActive }} class="active" aria-current="page"{{ end }}>
+          {{ .Name }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    <div class="masthead-nav-rule"></div>
+  </nav>
+</header>
+

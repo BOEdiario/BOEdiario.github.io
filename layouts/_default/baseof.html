@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body class="{{ if .IsHome }}home{{ end }}">
+  {{- partial "masthead.html" . -}}
+
+  <main class="main">
+    {{- block "main" . }}{{- end }}
+  </main>
+
+  {{- partial "footer.html" . -}}
+
+  {{- if .Site.Params.enableSearch }}
+  {{- partial "search.html" . -}}
+  {{- end }}
+
+  {{- with .Site.Params.stalepagereloadminutes }}
+  <script>
+  (function() {
+    var loadTime = Date.now();
+    var staleAfter = {{ . }} * 60 * 1000;
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden && (Date.now() - loadTime) > staleAfter) {
+        location.reload();
+      }
+    });
+  })();
+  </script>
+  {{- end }}
+</body>
+</html>
+

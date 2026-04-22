@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{- $paginator := .Paginate .Pages -}}
+<div class="section-archive">
+  <header class="section-archive-header">
+    <h1 class="section-archive-title">{{ .Title }}</h1>
+    <p class="section-archive-count">
+      {{ len .Pages }}
+      {{ if eq (len .Pages) 1 }}noticia publicada{{ else }}noticias publicadas{{ end }}
+    </p>
+  </header>
+
+  <div class="stories-list">
+    {{ range $paginator.Pages }}
+    <article class="story-item">
+      <a href="{{ .Permalink }}">
+        <div class="story-item-content">
+          <h3 class="story-item-headline">{{ .Title }}</h3>
+          {{ with .Params.summary }}
+          <p class="story-item-summary">{{ . }}</p>
+          {{ end }}
+        </div>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{- if templates.Exists "partials/date-es-short.html" -}}
+            {{ partial "date-es-short.html" (dict "date" .Date) }}
+          {{- else -}}
+            {{ partial "date-es.html" (dict "date" .Date "format" "short") }}
+          {{- end -}}
+        </time>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}
+

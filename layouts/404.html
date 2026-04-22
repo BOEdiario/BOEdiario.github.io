@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="error-page">
+  <h1 class="error-title">404</h1>
+  <p class="error-subtitle">Página no encontrada</p>
+
+  <div class="error-explanation">
+    <p>La página que buscas no existe o ha cambiado de ubicación.</p>
+    <p>Si has llegado aquí desde un enlace interno, avísanos para poder corregirlo.</p>
+  </div>
+
+  <a href="{{ .Site.BaseURL }}" class="error-link">Volver a inicio</a>
+</div>
+{{ end }}
+

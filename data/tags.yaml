@@ -1,0 +1,46 @@
+transversales:
+  - despoblacion
+  - campus-rural
+  - violencia-de-genero
+  - viogen
+  - renovables
+  - pesca
+  - dgt
+  - memoria-democratica
+  - inmigracion
+  - convenios-colectivos
+  - ue-reglamento
+  - cooperacion-internacional
+  - stem
+  - ayuntamientos
+  - universidad
+  - ayudas-autonomos
+  - ciberseguridad
+  - igualdad
+  - trabajo
+  - ia
+  - fiscalidad
+  - patrimonio
+  - ciencia
+
+territoriales:
+  - galicia
+  - andalucia
+  - canarias
+  - cataluna
+  - pais-vasco
+  - madrid
+  - comunidad-valenciana
+  - castilla-la-mancha
+  - castilla-y-leon
+  - aragon
+  - asturias
+  - cantabria
+  - navarra
+  - la-rioja
+  - baleares
+  - extremadura
+  - murcia
+  - ceuta
+  - melilla
+
