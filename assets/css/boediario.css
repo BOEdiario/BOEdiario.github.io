@@ -32,6 +32,17 @@
   letter-spacing: 0.09em;
 }
 
+/* Menú: alinear verticalmente todos los items (incl. Buscar) */
+.masthead-nav-list {
+  align-items: center;
+}
+
+.masthead-nav-list a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
 /* Tarjetas: más separación y hover más claro */
 .story-card,
 .story-item,
@@ -60,5 +71,43 @@
 .secondary-stories > :only-child {
   max-width: 520px;
   justify-self: center;
+}
+
+/* Menú: destacar BUSCAR como “botón” con icono */
+.masthead-nav-list a.masthead-nav-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: calc(var(--space-xs) + 1px) calc(var(--space-sm) + 2px);
+  border: 1px solid var(--color-rule-light);
+  border-radius: 999px;
+  background: var(--color-bg-alt);
+}
+
+.masthead-nav-list a.masthead-nav-search:hover,
+.masthead-nav-list a.masthead-nav-search.active {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.masthead-nav-list a.masthead-nav-search:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.masthead-nav-search-icon {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+}
+
+/* Tagline: mucho más protagonista */
+.masthead-tagline {
+  font-size: clamp(1.25rem, 1.05rem + 1.1vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  text-wrap: balance;
 }
 

@@ -1022,16 +1022,17 @@ figure {
 .ia-banner {
   background: var(--color-ia-bg);
   color: var(--color-ia-text);
-  border-top: 1px solid var(--color-rule);
-  border-bottom: 1px solid var(--color-rule);
+  border-top: 0;
+  border-bottom: 0;
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
+  line-height: 1.25;
 }
 
 .ia-banner-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-xs) var(--space-lg);
   text-align: center;
 }
 
@@ -1039,7 +1040,7 @@ figure {
   color: var(--color-ia-text);
   text-decoration: underline;
   font-weight: 600;
-  margin-left: 0.5em;
+  margin-left: 0.35em;
 }
 
 /* Menú de secciones bajo el masthead */
