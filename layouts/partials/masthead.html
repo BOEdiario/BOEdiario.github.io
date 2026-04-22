@@ -52,11 +52,13 @@
     <div class="masthead-nav-rule"></div>
     <ul class="masthead-nav-list">
       {{- $current := .RelPermalink -}}
-      {{- $pageSeccion := (.Params.seccion | default .Params.section) -}}
-      {{- $pageSeccionId := "" -}}
-      {{- with $pageSeccion -}}
-        {{- $pageSeccionId = (urlize .) -}}
+      {{- $pageSeccionSlug := "" -}}
+      {{- if .Params.seccion -}}
+        {{- $pageSeccionSlug = index .Params.seccion 0 -}}
+      {{- else if .Params.section -}}
+        {{- $pageSeccionSlug = .Params.section -}}
       {{- end -}}
+      {{- $pageSeccionId := $pageSeccionSlug | urlize -}}
       {{- range .Site.Menus.main }}
       {{- $isActive := or (eq $current .URL) (hasPrefix $current .URL) (and $pageSeccionId (eq .Identifier $pageSeccionId)) -}}
       {{- $isSearch := eq .Identifier "search" -}}

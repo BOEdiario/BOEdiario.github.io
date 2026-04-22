@@ -56,8 +56,11 @@
       </figure>
       {{- end }}
       <div class="lead-story-content">
-        {{- $seccion := $lead.Params.seccion | default $lead.Params.section -}}
-        {{- with $seccion }}
+        {{- $seccionSlug := "" -}}
+        {{- if $lead.Params.seccion -}}{{- $seccionSlug = index $lead.Params.seccion 0 -}}{{- else if $lead.Params.section -}}{{- $seccionSlug = $lead.Params.section -}}{{- end -}}
+        {{- $seccionNombre := $seccionSlug -}}
+        {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
+        {{- with $seccionNombre }}
           <span class="article-section">{{ . }}</span>
         {{- end }}
         <h2 class="lead-story-headline">{{ $lead.Title }}</h2>
@@ -121,8 +124,11 @@
         </figure>
         {{- end }}
         <div class="story-card-content">
-          {{- $seccion := .Params.seccion | default .Params.section -}}
-          {{- with $seccion }}
+          {{- $seccionSlug := "" -}}
+          {{- if .Params.seccion -}}{{- $seccionSlug = index .Params.seccion 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
+          {{- $seccionNombre := $seccionSlug -}}
+          {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
+          {{- with $seccionNombre }}
             <span class="article-section">{{ . }}</span>
           {{- end }}
           <h3 class="story-card-headline">{{ .Title }}</h3>
@@ -148,8 +154,11 @@
       <article class="story-item">
         <a href="{{ .Permalink }}">
           <div class="story-item-content">
-            {{- $seccion := .Params.seccion | default .Params.section -}}
-            {{- with $seccion }}
+            {{- $seccionSlug := "" -}}
+            {{- if .Params.seccion -}}{{- $seccionSlug = index .Params.seccion 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
+            {{- $seccionNombre := $seccionSlug -}}
+            {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
+            {{- with $seccionNombre }}
               <span class="article-section">{{ . }}</span>
             {{- end }}
             <h3 class="story-item-headline">{{ .Title }}</h3>
