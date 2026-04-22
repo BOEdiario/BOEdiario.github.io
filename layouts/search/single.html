@@ -39,7 +39,8 @@
       white-space: nowrap;
     }
 
-    .date-filter-group input[type="date"] {
+    .date-filter-group input[type="date"],
+    .date-filter-group select {
       padding: 0.4rem 0.6rem;
       border: 1px solid #999;
       font-family: var(--font-body);
@@ -153,6 +154,15 @@
         <input type="date" id="date-to">
       </div>
       <button class="search-clear-dates" id="clear-dates" style="display:none">Limpiar fechas</button>
+      <div class="date-filter-group">
+        <label for="seccion-filter">Sección</label>
+        <select id="seccion-filter">
+          <option value="">Todas las secciones</option>
+          {{ range site.Taxonomies.secciones.Alphabetical }}
+          <option value="{{ .Term }}">{{ .Page.Title }}</option>
+          {{ end }}
+        </select>
+      </div>
     </div>
   </div>
 
@@ -168,6 +178,7 @@
     const fromEl     = document.getElementById('date-from');
     const toEl       = document.getElementById('date-to');
     const clearBtn   = document.getElementById('clear-dates');
+    const seccionEl  = document.getElementById('seccion-filter');
     const statusEl   = document.getElementById('search-status');
     const resultsEl  = document.getElementById('search-results');
     const loadMoreEl = document.getElementById('load-more');
@@ -214,7 +225,7 @@
       const from  = fromEl.value;
       const to    = toEl.value;
 
-      if (!query && !from && !to) {
+      if (!query && !from && !to && !seccionEl.value) {
         statusEl.textContent = '';
         resultsEl.innerHTML  = '';
         loadMoreEl.style.display = 'none';
@@ -229,7 +240,9 @@
           await pagefind.init();
         }
 
-        const response = await pagefind.search(query);
+        const filterObj = {};
+        if (seccionEl.value) filterObj.seccion = seccionEl.value;
+        const response = await pagefind.search(query, { filters: filterObj });
         const total    = response.results.length;
 
         const slice  = response.results.slice(0, MAX_LOAD);
@@ -265,9 +278,10 @@
       clearBtn.style.display = (fromEl.value || toEl.value) ? 'inline' : 'none';
     }
 
-    queryEl.addEventListener('input',  scheduleSearch);
-    fromEl.addEventListener('change',  () => { updateClearBtn(); doSearch(); });
-    toEl.addEventListener('change',    () => { updateClearBtn(); doSearch(); });
+    queryEl.addEventListener('input',   scheduleSearch);
+    fromEl.addEventListener('change',   () => { updateClearBtn(); doSearch(); });
+    toEl.addEventListener('change',     () => { updateClearBtn(); doSearch(); });
+    seccionEl.addEventListener('change', doSearch);
     clearBtn.addEventListener('click', () => {
       fromEl.value = '';
       toEl.value   = '';

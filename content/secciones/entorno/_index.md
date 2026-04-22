@@ -1,5 +1,5 @@
 ---
-title: "Entorno"
+title: "Medio Ambiente"
 url: "/secciones/entorno/"
 ---
 

@@ -1,8 +1,17 @@
 {{ define "main" }}
-<article class="article">
+{{- $seccionSlug := "" -}}
+{{- if .Params.seccion -}}
+  {{- $seccionSlug = index .Params.seccion 0 -}}
+{{- else if .Params.section -}}
+  {{- $seccionSlug = .Params.section -}}
+{{- end -}}
+{{- $seccionNombre := $seccionSlug -}}
+{{- with .Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}
+  {{- $seccionNombre = .Title -}}
+{{- end -}}
+<article class="article"{{- if $seccionSlug }} data-pagefind-filter="seccion:{{ $seccionSlug }}"{{- end }}>
   <header class="article-header">
-    {{- $seccion := .Params.seccion | default .Params.section -}}
-    {{- with $seccion }}
+    {{- with $seccionNombre }}
       <span class="article-section">{{ . }}</span>
     {{- end }}
 

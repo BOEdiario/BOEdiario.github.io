@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- $paginator := .Paginate .Pages -}}
-<div class="section-archive">
+<div class="section-archive" data-pagefind-ignore="all">
   <header class="section-archive-header">
     <h1 class="section-archive-title">{{ .Title }}</h1>
     <p class="section-archive-count">
