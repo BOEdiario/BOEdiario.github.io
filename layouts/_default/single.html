@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- $seccionSlug := "" -}}
-{{- if .Params.seccion -}}
-  {{- $seccionSlug = index .Params.seccion 0 -}}
+{{- if .Params.secciones -}}
+  {{- $seccionSlug = index .Params.secciones 0 -}}
 {{- else if .Params.section -}}
   {{- $seccionSlug = .Params.section -}}
 {{- end -}}

@@ -53,8 +53,8 @@
     <ul class="masthead-nav-list">
       {{- $current := .RelPermalink -}}
       {{- $pageSeccionSlug := "" -}}
-      {{- if .Params.seccion -}}
-        {{- $pageSeccionSlug = index .Params.seccion 0 -}}
+      {{- if .Params.secciones -}}
+        {{- $pageSeccionSlug = index .Params.secciones 0 -}}
       {{- else if .Params.section -}}
         {{- $pageSeccionSlug = .Params.section -}}
       {{- end -}}

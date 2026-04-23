@@ -57,7 +57,7 @@
       {{- end }}
       <div class="lead-story-content">
         {{- $seccionSlug := "" -}}
-        {{- if $lead.Params.seccion -}}{{- $seccionSlug = index $lead.Params.seccion 0 -}}{{- else if $lead.Params.section -}}{{- $seccionSlug = $lead.Params.section -}}{{- end -}}
+        {{- if $lead.Params.secciones -}}{{- $seccionSlug = index $lead.Params.secciones 0 -}}{{- else if $lead.Params.section -}}{{- $seccionSlug = $lead.Params.section -}}{{- end -}}
         {{- $seccionNombre := $seccionSlug -}}
         {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
         {{- with $seccionNombre }}
@@ -125,7 +125,7 @@
         {{- end }}
         <div class="story-card-content">
           {{- $seccionSlug := "" -}}
-          {{- if .Params.seccion -}}{{- $seccionSlug = index .Params.seccion 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
+          {{- if .Params.secciones -}}{{- $seccionSlug = index .Params.secciones 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
           {{- $seccionNombre := $seccionSlug -}}
           {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
           {{- with $seccionNombre }}
@@ -155,7 +155,7 @@
         <a href="{{ .Permalink }}">
           <div class="story-item-content">
             {{- $seccionSlug := "" -}}
-            {{- if .Params.seccion -}}{{- $seccionSlug = index .Params.seccion 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
+            {{- if .Params.secciones -}}{{- $seccionSlug = index .Params.secciones 0 -}}{{- else if .Params.section -}}{{- $seccionSlug = .Params.section -}}{{- end -}}
             {{- $seccionNombre := $seccionSlug -}}
             {{- with $.Site.GetPage (printf "/secciones/%s" $seccionSlug) -}}{{- $seccionNombre = .Title -}}{{- end -}}
             {{- with $seccionNombre }}
