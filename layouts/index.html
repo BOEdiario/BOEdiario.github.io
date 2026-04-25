@@ -5,7 +5,7 @@
   {{- $all := where .Site.RegularPages "Section" "noticias" -}}
   {{- $posts := slice -}}
   {{- range sort $all "Date" "desc" -}}
-    {{- if and (eq (.Date.Format "2006-01-02") $day) (ne .Params.confianza "bajo") -}}
+    {{- if and (eq (.Date.Format "2006-01-02") $day) .Params.image -}}
       {{- $posts = $posts | append . -}}
     {{- end -}}
   {{- end -}}
