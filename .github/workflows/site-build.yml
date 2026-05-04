@@ -89,7 +89,7 @@ jobs:
 
       - name: Install Dart Sass
         #run: sudo snap install dart-sass
-        run: brew install sass/sass/sass
+        run: /home/linuxbrew/.linuxbrew/bin/brew install sass/sass/sass
 
       - name: Build con Hugo
         env:
