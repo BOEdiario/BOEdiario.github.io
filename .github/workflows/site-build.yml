@@ -84,6 +84,9 @@ jobs:
           sudo dpkg -i "${{ runner.temp }}/hugo.deb"
           hugo version
 
+      - name: Install Brew
+        run: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
       - name: Install Dart Sass
         #run: sudo snap install dart-sass
         run: brew install sass/sass/sass
