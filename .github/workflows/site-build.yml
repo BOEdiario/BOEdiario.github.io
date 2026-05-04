@@ -85,7 +85,8 @@ jobs:
           hugo version
 
       - name: Install Dart Sass
-        run: sudo snap install dart-sass
+        #run: sudo snap install dart-sass
+        run: brew install sass/sass/sass
 
       - name: Build con Hugo
         env:
